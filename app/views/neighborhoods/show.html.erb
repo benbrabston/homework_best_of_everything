@@ -9,4 +9,10 @@
   <dt>City</dt>
   <dd><%= @neighborhood.city %></dd>
 
+  <dt>Venues in Neighborhood</dt>
+  <% @venue.each do |venue| %>
+  <dd><%= Venue.find(venue.id).name %></dd>
+  <% end %>
+
+
 </dl>

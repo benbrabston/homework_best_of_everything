@@ -5,6 +5,9 @@ class DishesController < ApplicationController
 
   def show
     @dish = Dish.find(params[:id])
+    @cuisine = Cuisine.find(@dish.cuisine_id).name
+
+    @venue = Favorite.where({ :dish_id => @dish.id})
   end
 
   def new_form
